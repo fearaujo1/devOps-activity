@@ -1,0 +1,25 @@
+name: Docker CI
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v6
+
+      - name: Construir a imagem
+        run: docker build -t atividade-node .
+
+      - name: Iniciar o contêiner
+        run: docker run -d -p 3000:3000 atividade-node
+
+      - name: Conferir a resposta do servidor
+        run: |
+          resposta=$(curl --fail --silent --show-error --retry 10 --retry-connrefused --retry-delay 1 http://localhost:3000/)
+          test "$resposta" = "Hello World from Node.js!"

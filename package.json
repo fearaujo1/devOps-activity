@@ -1,0 +1,23 @@
+{
+  "name": "pratica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fearaujo1/devOps-activity.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fearaujo1/devOps-activity/issues"
+  },
+  "homepage": "https://github.com/fearaujo1/devOps-activity#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
